@@ -1,0 +1,33 @@
+<h2>Liste des livres</h2>
+
+<!-- Barre de recherche -->
+<form class="search-form">
+  <input type="text" placeholder="Rechercher un livre" [(ngModel)]="searchTerm" name="searchTerm" class="search-input"> <!-- Champ d'entrée pour le terme de recherche, lié à la propriété searchTerm -->
+  <button type="button" (click)="rechercher()" class="search-button">Rechercher</button> <!-- Bouton de recherche qui déclenche la méthode rechercher() lorsqu'il est cliqué -->
+</form>
+
+<table class="book-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Intitulé</th>
+      <th>Auteur</th>
+      <th>Éditeur</th>
+      <th>Année de publication</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let livre of livres"> <!-- Boucle sur chaque livre dans le tableau livres -->
+      <td>{{ livre.id }}</td> <!-- Affiche l'ID du livre -->
+      <td>{{ livre.intitule }}</td> <!-- Affiche l'intitulé du livre -->
+      <td>{{ livre.auteur }}</td> <!-- Affiche l'auteur du livre -->
+      <td>{{ livre.editeur }}</td> <!-- Affiche l'éditeur du livre -->
+      <td>{{ livre.anneePublication }}</td> <!-- Affiche l'année de publication du livre -->
+      <td>
+        <button class="btn-delete" (click)="supprimerLivre(livre.id)">Supprimer</button> <!-- Bouton pour supprimer le livre, déclenche la méthode supprimerLivre() avec l'ID du livre passé en paramètre -->
+        <button class="btn-update" (click)="ouvrirFormulaireMiseAJour(livre)">Mettre à jour</button> <!-- Bouton pour ouvrir le formulaire de mise à jour du livre, déclenche la méthode ouvrirFormulaireMiseAJour() avec le livre passé en paramètre -->
+      </td>
+    </tr>
+  </tbody>
+</table>

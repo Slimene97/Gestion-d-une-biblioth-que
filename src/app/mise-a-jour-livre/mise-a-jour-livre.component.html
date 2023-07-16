@@ -1,0 +1,21 @@
+<h2>Mise à jour du livre</h2>
+
+<form (ngSubmit)="mettreAJourLivre()" #livreForm="ngForm" class="update-form">
+  <div class="form-group">
+    <label for="intitule">Intitulé:</label> <!-- Étiquette pour le champ Intitulé -->
+    <input type="text" id="intitule" name="intitule" [(ngModel)]="livre.intitule" required> <!-- Champ d'entrée pour l'Intitulé, lié à la propriété livre.intitule et requis -->
+  </div>
+  <div class="form-group">
+    <label for="auteur">Auteur:</label> <!-- Étiquette pour le champ Auteur -->
+    <input type="text" id="auteur" name="auteur" [(ngModel)]="livre.auteur" required> <!-- Champ d'entrée pour l'Auteur, lié à la propriété livre.auteur et requis -->
+  </div>
+  <div class="form-group">
+    <label for="editeur">Éditeur:</label> <!-- Étiquette pour le champ Éditeur -->
+    <input type="text" id="editeur" name="editeur" [(ngModel)]="livre.editeur" required> <!-- Champ d'entrée pour l'Éditeur, lié à la propriété livre.editeur et requis -->
+  </div>
+  <div class="form-group">
+    <label for="anneePublication">Année de publication:</label> <!-- Étiquette pour le champ Année de publication -->
+    <input type="number" id="anneePublication" name="anneePublication" [(ngModel)]="livre.anneePublication" required> <!-- Champ d'entrée pour l'Année de publication, lié à la propriété livre.anneePublication et requis -->
+  </div>
+  <button type="submit" class="btn-update">Mettre à jour</button> <!-- Bouton de soumission du formulaire pour mettre à jour le livre -->
+</form>

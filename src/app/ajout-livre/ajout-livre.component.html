@@ -1,0 +1,26 @@
+<h2>Ajouter un livre</h2>
+
+<form class="book-form">
+  <div class="form-group">
+    <label for="id">ID:</label> <!-- Étiquette pour le champ ID -->
+    <input type="number" [(ngModel)]="nouveauLivre.id" name="id" id="id" required> <!-- Champ d'entrée pour l'ID du livre (type nombre, lié à nouveauLivre.id, requis) -->
+  </div>
+  <div class="form-group">
+    <label for="intitule">Intitulé:</label> <!-- Étiquette pour le champ Intitulé -->
+    <input type="text" [(ngModel)]="nouveauLivre.intitule" name="intitule" id="intitule" required> <!-- Champ d'entrée pour l'Intitulé (type texte, lié à nouveauLivre.intitule, requis) -->
+  </div>
+  <div class="form-group">
+    <label for="auteur">Auteur:</label> <!-- Étiquette pour le champ Auteur -->
+    <input type="text" [(ngModel)]="nouveauLivre.auteur" name="auteur" id="auteur" required> <!-- Champ d'entrée pour l'Auteur (type texte, lié à nouveauLivre.auteur, requis) -->
+  </div>
+  <div class="form-group">
+    <label for="editeur">Éditeur:</label> <!-- Étiquette pour le champ Éditeur -->
+    <input type="text" [(ngModel)]="nouveauLivre.editeur" name="editeur" id="editeur" required> <!-- Champ d'entrée pour l'Éditeur (type texte, lié à nouveauLivre.editeur, requis) -->
+  </div>
+  <div class="form-group">
+    <label for="anneePublication">Année de publication:</label> <!-- Étiquette pour le champ Année de publication -->
+    <input type="number" [(ngModel)]="nouveauLivre.anneePublication" name="anneePublication" id="anneePublication" required> <!-- Champ d'entrée pour l'Année de publication (type nombre, lié à nouveauLivre.anneePublication, requis) -->
+  </div>
+
+  <button class="btn-add" (click)="ajouterLivre()">Ajouter</button> <!-- Bouton Ajouter qui appelle la méthode ajouterLivre() lorsqu'il est cliqué -->
+</form>
