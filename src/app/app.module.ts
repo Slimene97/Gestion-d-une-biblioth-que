@@ -17,8 +17,8 @@ import { MiseAJourLivreComponent } from './mise-a-jour-livre/mise-a-jour-livre.c
     MiseAJourLivreComponent
   ],
   imports: [
-    BrowserModule,             
-    FormsModule,               
+    BrowserModule,             // Importe le module 'BrowserModule' qui fournit les services de base pour exécuter une application Angular dans un navigateur
+    FormsModule,               // Importe le module 'FormsModule' pour prendre en charge la liaison bidirectionnelle des données
     AppRoutingModule          // Importe le module de routage de l'application, qui définit les routes de l'application
   ],
   providers: [],
