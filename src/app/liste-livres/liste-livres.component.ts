@@ -18,19 +18,17 @@ export class ListeLivresComponent implements OnInit {
   }
 
   rechercher(): void {
-    this.livres = this.livreService.getLivres(this.searchTerm); // Effectue une recherche de livres en utilisant le service LivreService lorsque le bouton de recherche est cliqué
+    this.livres = this.livreService.getLivres(this.searchTerm); 
   }
 
   mettreAJourLivre(livre: Livre): void {
-    const livreToUpdate = this.livreService.getLivreById(livre.id); // Récupère le livre à mettre à jour en utilisant l'ID passé en paramètre
+    const livreToUpdate = this.livreService.getLivreById(livre.id); 
     if (livreToUpdate) {
-      // Met à jour les propriétés du livreToUpdate avec les nouvelles valeurs du livre passé en paramètre
       livreToUpdate.intitule = livre.intitule;
       livreToUpdate.auteur = livre.auteur;
-      livreToUpdate.editeur = livre.editeur;
       livreToUpdate.anneePublication = livre.anneePublication;
 
-      // Met à jour le livre dans le service LivreService
+      //Modifier le livre dans le service LivreService
       this.livreService.mettreAJourLivre(livreToUpdate);
     }
   }
@@ -41,6 +39,6 @@ export class ListeLivresComponent implements OnInit {
 
   supprimerLivre(id: number): void {
     this.livreService.supprimerLivre(id); // Supprime le livre en utilisant le service LivreService avec l'ID passé en paramètre
-    this.livres = this.livreService.getLivres(this.searchTerm); // Met à jour la liste des livres après la suppression
+    this.livres = this.livreService.getLivres(this.searchTerm); 
   }
 }
